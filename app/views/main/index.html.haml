@@ -1,0 +1,15 @@
+%h1
+	Please choose category
+
+%ul.category-list.category-container.c
+	- @cats.each_with_index do |cat, i|
+		- omega = i % 2 != 0 ? 'omega' : ''
+
+		%li{ :class => ['category-item', omega]}
+
+			.box-theme-1
+				%h2
+					= cat[:name]
+
+				%p
+					= cat[:description]
