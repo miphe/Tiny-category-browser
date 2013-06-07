@@ -1,0 +1,73 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "base";
+@import "compass";
+@import "compass/reset";
+
+/* -------------------------------------------------------------------------*/
+/* Typography */
+
+$link-color: #bbb;
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+@include establish-baseline;
+
+body {
+	font-family: "lucida grande", verdana, sans-serif;
+}
+
+$h-size: $base-font-size;
+@each $h in (h1, h2, h3, h4) {
+	#{$h} { font-size: $h-size; }
+	$h-size: $h-size - 2px;
+}
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+a {
+	@include link-colors($link-color, darken($link-color, 20%), $link-color, lighten($link-color, 5%), $link-color)
+}
+
+/* -------------------------------------------------------------------------*/
+/* Custom */
+
+header {
+	height: 100px;
+}
+
+#page {
+	padding-top: 15px;
+}
+
+/* -------------------------------------------------------------------------*/
+/* Boxes */
+
+.l-box {
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: 15px;
+}
+
+$box-theme-1-color: #ececec;
+.box-theme-1 {
+	@extend .l-box;
+
+	background-color: $box-theme-1-color;
+	color: darken($box-theme-1-color, 20%);
+	border: 1px solid darken($box-theme-1-color, 1%);
+}
+
+.box-theme-2 {
+	@extend .l-box;
+
+	border: 1px solid darken($box-theme-1-color, 1%);
+}
+
+.box-theme-3 {
+	@extend .l-box;
+
+	background-color: rgb(0, 171, 76);
+	color: #fff;
+}

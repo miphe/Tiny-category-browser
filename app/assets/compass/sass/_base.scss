@@ -1,0 +1,41 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+/* Author André Drougge */
+/* -------------------------------------------------------------------------*/
+/* Clearfix */
+
+.c {
+	@include clearfix;
+}
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+// Setting up the Static Grid
+$total-columns: 12;
+$column-width: 12%;
+$gutter-width: 2%;
+$grid-padding: 0;
+
+$container-style: fluid;
+$container-width: 80%;
+$show-grid-backgrounds: false;
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+.static-container {
+  @include container;
+  @include susy-grid-background;
+}
+
+/* -------------------------------------------------------------------------*/
+/* Category grid */
+
+.category-container {
+	li.category-item { @include span-columns(6,12); }
+	li.category-item.omega { @include span-columns(6 omega,12); }
+}
