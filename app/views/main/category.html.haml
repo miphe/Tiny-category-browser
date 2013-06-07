@@ -13,6 +13,15 @@
 			%p
 				= @category[:description]
 
+			%ul.list-1
+				- @category[:series].each do |serie|
+					%li
+						%h3
+							= serie[:name]
+						%p
+							= serie[:description]
+
+
 		.category-content.omega
 			%img{ :src => image_path(@category[:main_image]) }/
 

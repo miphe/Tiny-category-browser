@@ -122,6 +122,25 @@ $button-1-color: rgb(0, 171, 76);
 }
 
 /* -------------------------------------------------------------------------*/
+/* Lists */
+
+.l-list {
+	li {
+
+	}
+}
+
+$button-1-color: #cecece;
+.list-1 {
+	@extend .l-list;
+
+	li {
+		padding-left: 10px;
+		border-left: 5px solid $button-1-color;
+	}
+}
+
+/* -------------------------------------------------------------------------*/
 /* Custom */
 
 header {

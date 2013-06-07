@@ -9,6 +9,7 @@ class MainController < ApplicationController
 		@category = get_category_by_id(params[:id])
 	end
 
+	# TODO: move me to lib.
 	def all_categories
 		[
 			{
@@ -25,7 +26,30 @@ class MainController < ApplicationController
 				:position => 1,
 				:series => [
 					{
-
+						:id => 1111,
+						:name => 'English: CORE 100',
+						:description => 'In this series you will learn quite a lot about the English language.',
+						:icon => 'category/core_english/series/1111/icon.jpg',
+						:square_icon => 'category/core_english/series/1111/square_icon.jpg',
+						:author => {
+							:id => 'Smart.fm',
+							:name => 'Smart.rm',
+							:icon => 'category/core_english/series/1111/author/icon.jpg',
+						},
+						:goals => {}
+					},
+					{
+						:id => 2222,
+						:name => 'English: CORE 200',
+						:description => 'In this series you will learn much about the English language.',
+						:icon => 'category/core_english/series/2222/icon.jpg',
+						:square_icon => 'category/core_english/series/2222/square_icon.jpg',
+						:author => {
+							:id => 'Smart.fm',
+							:name => 'Smart.rm',
+							:icon => 'category/core_english/series/2222/author/icon.jpg',
+						},
+						:goals => {}
 					}
 				]
 			},
