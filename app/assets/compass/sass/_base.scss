@@ -33,9 +33,22 @@ $show-grid-backgrounds: false;
 }
 
 /* -------------------------------------------------------------------------*/
-/* Category grid */
+/* Categories grid */
+
+.categories-container {
+	li.category-item { @include span-columns(6, 12); }
+	li.category-item.omega { @include span-columns(6 omega, 12); }
+}
 
 .category-container {
-	li.category-item { @include span-columns(6,12); }
-	li.category-item.omega { @include span-columns(6 omega,12); }
+	.category-content { @include span-columns(9, 12); }
+	.category-content.omega { @include span-columns(3 omega, 12); }
+}
+
+/* -------------------------------------------------------------------------*/
+/* Debug */
+
+pre {
+	font-family: monospace,Courier;
+	white-space: pre-wrap;
 }

@@ -1,15 +1,20 @@
-%h1
-	Please choose category
-
-%ul.category-list.category-container.c
+%ul.category-list.categories-container.c
 	- @cats.each_with_index do |cat, i|
 		- omega = i % 2 != 0 ? 'omega' : ''
 
 		%li{ :class => ['category-item', omega]}
 
 			.box-theme-1
-				%h2
-					= cat[:name]
+				.category-container.c
+					.category-content
+						%h2
+							= cat[:name]
 
-				%p
-					= cat[:description]
+						%p
+							= cat[:description]
+
+						%a.button-1{ :href => "/category/#{cat[:id]}"}
+							Explore &rsaquo;
+
+					.category-content.omega
+						%img{ :src => image_path(cat[:icon_image]) }/

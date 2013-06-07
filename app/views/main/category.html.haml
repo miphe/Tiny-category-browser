@@ -1,0 +1,22 @@
+%a.button-1{ :href => '/'}
+	&lsaquo; Go back
+
+.box-theme-1
+	.category-container.c
+		.category-content
+			%h2
+				= @category[:name]
+
+				%span.subtle-text
+					= "| #{@category[:catch_phrase]}"
+
+			%p
+				= @category[:description]
+
+		.category-content.omega
+			%img{ :src => image_path(@category[:main_image]) }/
+
+%hr
+
+%pre
+	= @category

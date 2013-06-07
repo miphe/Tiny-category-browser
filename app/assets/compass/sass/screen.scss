@@ -9,8 +9,8 @@
 /* Typography */
 
 $link-color: #bbb;
-$base-font-size: 16px;
-$base-line-height: 24px;
+$base-font-size: 12px;
+$base-line-height: 20px;
 
 @include establish-baseline;
 
@@ -18,16 +18,107 @@ body {
 	font-family: "lucida grande", verdana, sans-serif;
 }
 
-$h-size: $base-font-size;
-@each $h in (h1, h2, h3, h4) {
+$h-size: $base-font-size + 4px;
+@each $h in (h1, h2) {
 	#{$h} { font-size: $h-size; }
 	$h-size: $h-size - 2px;
 }
+
 h1, h2, h3, h4 {
 	font-weight: bold;
 }
+
 a {
 	@include link-colors($link-color, darken($link-color, 20%), $link-color, lighten($link-color, 5%), $link-color)
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+.subtle-text {
+	font-style: italic;
+	font-weight: normal;
+}
+
+/* -------------------------------------------------------------------------*/
+/* Boxes */
+
+.l-box {
+	// Layout
+	display: block;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+$box-theme-1-color: #ececec;
+.box-theme-1 {
+	@extend .l-box;
+
+	background-color: $box-theme-1-color;
+	color: darken($box-theme-1-color, 30%);
+	border: 1px solid darken($box-theme-1-color, 2%);
+
+	// Type
+	h1, h2 {
+		color: darken($box-theme-1-color, 60%);
+		border-bottom: 1px dotted darken($box-theme-1-color, 10%);
+		margin-bottom: 5px;
+
+		.subtle-text {
+			color: darken($box-theme-1-color, 30%);
+		}
+	}
+}
+
+.box-theme-2 {
+	@extend .l-box;
+
+	border: 1px solid darken($box-theme-1-color, 2%);
+}
+
+$box-theme-3-color: rgb(0, 171, 76);
+.box-theme-3 {
+	@extend .l-box;
+
+	background-color: $box-theme-3-color;
+	color: lighten($box-theme-3-color, 50%);
+
+	// Type
+	h1, h2 {
+		font: {
+			weight: normal;
+		}
+	}
+}
+
+/* -------------------------------------------------------------------------*/
+/* Buttons */
+
+.l-button {
+	// Layout
+	display: inline-block;
+	padding: 8px 12px;
+	margin-bottom: 8px;
+	text-decoration: none;
+	@include border-radius(6px);
+
+	// State
+	&:hover	{
+		text-decoration: underline;
+	}
+}
+
+$button-1-color: rgb(0, 171, 76);
+.button-1 {
+	@extend .l-button;
+
+	background-color: $button-1-color;
+	color: #fff;
+
+	&:hover, &:visited, &:focus {
+		color: #fff;
+	}
 }
 
 /* -------------------------------------------------------------------------*/
@@ -41,33 +132,20 @@ header {
 	padding-top: 15px;
 }
 
-/* -------------------------------------------------------------------------*/
-/* Boxes */
+// Category
+.category-content {
+	&.omega {
+		position: relative;
+		overflow: hidden;
+		height: 100px;
+		background: {
+			color: #e0d6c7;
+		}
 
-.l-box {
-	display: block;
-	padding: 10px 15px;
-	margin-bottom: 15px;
-}
-
-$box-theme-1-color: #ececec;
-.box-theme-1 {
-	@extend .l-box;
-
-	background-color: $box-theme-1-color;
-	color: darken($box-theme-1-color, 20%);
-	border: 1px solid darken($box-theme-1-color, 1%);
-}
-
-.box-theme-2 {
-	@extend .l-box;
-
-	border: 1px solid darken($box-theme-1-color, 1%);
-}
-
-.box-theme-3 {
-	@extend .l-box;
-
-	background-color: rgb(0, 171, 76);
-	color: #fff;
+		img {
+			position: absolute;
+			left: 50%;
+			margin-left: -75px;
+		}
+	}
 }
