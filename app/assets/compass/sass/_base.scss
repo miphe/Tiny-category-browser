@@ -45,6 +45,11 @@ $show-grid-backgrounds: false;
 	.category-content.omega { @include span-columns(3 omega, 12); }
 }
 
+.category-container-main {
+	.category-content { @include span-columns(7, 12); }
+	.category-content.omega { @include span-columns(5 omega, 12); }
+}
+
 /* -------------------------------------------------------------------------*/
 /* Debug */
 

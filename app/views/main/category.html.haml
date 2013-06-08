@@ -1,10 +1,10 @@
-%a.button-1{ :href => '/'}
+%a.button-1{ :href => '/'}<
 	&lsaquo; Go back
 
 .box-theme-1
-	.category-container.c
+	.category-container-main.c
 		.category-content
-			%h2
+			%h2<
 				= @category[:name]
 
 				%span.subtle-text
@@ -13,17 +13,29 @@
 			%p
 				= @category[:description]
 
-			%ul.list-1
-				- @category[:series].each do |serie|
-					%li
-						%h3
-							= serie[:name]
-						%p
-							= serie[:description]
+			%h3<
+				Series:
 
+			%ul.list-1-icons
+				- @category[:series].each do |serie|
+					%li.collapsed_
+						.c
+							%span.icon<
+								%img{ :src => image_path(serie[:square_icon]), :alt => serie[:name] }/
+
+							.l-portrait-item
+								%h3
+									%a.button-1{ :href => '#'}
+										= serie[:name]
+										&rsaquo;
+								%p
+									= serie[:description]
+
+						.box-theme-1.is-hidden_
+							hello
 
 		.category-content.omega
-			%img{ :src => image_path(@category[:main_image]) }/
+			%img{ :src => image_path(@category[:main_image]), :alt => @category[:name] }/
 
 %hr
 
