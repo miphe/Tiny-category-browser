@@ -226,7 +226,7 @@ p {
 
 /* -------------------------------------------------------------------------*/
 /* Buttons */
-.l-button, .button-1 {
+.l-button, .button-1, .button-1-inline {
   display: inline-block;
   padding: 8px 12px;
   margin-bottom: 8px;
@@ -237,16 +237,21 @@ p {
   -o-border-radius: 6px;
   border-radius: 6px;
 }
-.l-button:hover, .button-1:hover {
+.l-button:hover, .button-1:hover, .button-1-inline:hover {
   text-decoration: underline;
 }
 
-.button-1 {
+.button-1, .button-1-inline {
   background-color: #00ab4c;
   color: #fff;
 }
-.button-1:hover, .button-1:visited, .button-1:focus {
+.button-1:hover, .button-1-inline:hover, .button-1:visited, .button-1-inline:visited, .button-1:focus, .button-1-inline:focus {
   color: #fff;
+}
+
+.button-1-inline {
+  padding: 1px 8px;
+  margin: 0;
 }
 
 /* -------------------------------------------------------------------------*/
@@ -267,7 +272,7 @@ p {
   height: 80px;
 }
 .list-1-icons .l-portrait-item {
-  padding: 10px 0;
+  padding: 6px 0 0 0;
 }
 .list-1-icons .l-portrait-item, .list-1-icons .icon {
   float: left;
@@ -275,7 +280,16 @@ p {
 .list-1-icons .icon {
   height: 80px;
   width: 80px;
-  margin-right: 10px;
+  margin-right: 6px;
+}
+.list-1-icons .box-theme-1 {
+  margin-bottom: 0;
+}
+
+.list-simple li {
+  border: none;
+  list-style-position: inside;
+  list-style-type: disc;
 }
 
 /* -------------------------------------------------------------------------*/

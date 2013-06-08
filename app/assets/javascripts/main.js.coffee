@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# My first Coffee :)
+
+applyCollapseExpandEvents = ->
+	$('.ce-trigger').on 'click', (e) ->
+		e.preventDefault()
+		e.stopPropagation()
+		s = $(this).closest('.ce-scope')
+
+		$(this).closest('.ce-scope').find('.ce-target').slideToggle '200'
+
+# Init
+$(document).ready ->
+	applyCollapseExpandEvents()
+	test()

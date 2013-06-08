@@ -1,0 +1,35 @@
+/* -------------------------------------------------------------------------*/
+/* Typography */
+
+$link-color: #bbb;
+$base-font-size: 12px;
+$base-line-height: 20px;
+
+@include establish-baseline;
+
+body {
+	font-family: "lucida grande", verdana, sans-serif;
+}
+
+$h-size: $base-font-size + 4px;
+@each $h in (h1, h2) {
+	#{$h} { font-size: $h-size; }
+	$h-size: $h-size - 2px;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+a {
+	@include link-colors($link-color, darken($link-color, 20%), $link-color, lighten($link-color, 5%), $link-color)
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+.subtle-text {
+	font-style: italic;
+	font-weight: normal;
+}

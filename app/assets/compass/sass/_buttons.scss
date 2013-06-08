@@ -1,0 +1,35 @@
+/* -------------------------------------------------------------------------*/
+/* Buttons */
+
+.l-button {
+	// Layout
+	display: inline-block;
+	padding: 8px 12px;
+	margin-bottom: 8px;
+	text-decoration: none;
+	@include border-radius(6px);
+
+	// State
+	&:hover	{
+		text-decoration: underline;
+	}
+}
+
+$button-1-color: rgb(0, 171, 76);
+.button-1 {
+	@extend .l-button;
+
+	background-color: $button-1-color;
+	color: #fff;
+
+	&:hover, &:visited, &:focus {
+		color: #fff;
+	}
+}
+
+.button-1-inline {
+	@extend .button-1;
+
+	padding: 1px 8px;
+	margin: 0;
+}

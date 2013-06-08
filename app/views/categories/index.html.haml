@@ -18,21 +18,30 @@
 
 			%ul.list-1-icons
 				- @category[:series].each do |serie|
-					%li.collapsed_
+					%li.ce-scope
+
 						.c
 							%span.icon<
 								%img{ :src => image_path(serie[:square_icon]), :alt => serie[:name] }/
 
 							.l-portrait-item
 								%h3
-									%a.button-1{ :href => '#'}
+									%a.button-1.ce-trigger{ :href => '#'}
 										= serie[:name]
 										&rsaquo;
 								%p
 									= serie[:description]
 
-						.box-theme-1.is-hidden_
-							hello
+						.box-theme-1.is-hidden.ce-target
+
+							%ul.list-simple
+								- serie[:goals].each do |goal|
+
+									%li
+										= goal[:title]
+
+										%a.button-1-inline{ :href => "#{categories_path}/#{@category[:id]}/series/#{serie[:id]}/goals/#{goal[:id]}" }<
+											Learn &rsaquo;
 
 		.category-content.omega
 			%img{ :src => image_path(@category[:main_image]), :alt => @category[:name] }/
@@ -40,4 +49,4 @@
 %hr
 
 %pre
-	= @category
+	= @category[:series][0][:goals]

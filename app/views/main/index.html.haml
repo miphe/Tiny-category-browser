@@ -1,5 +1,5 @@
 %ul.category-list.categories-container.c
-	- @cats.each_with_index do |cat, i|
+	- @categories.each_with_index do |cat, i|
 		- omega = i % 2 != 0 ? 'omega' : ''
 
 		%li{ :class => ['category-item', omega]}
@@ -13,7 +13,7 @@
 						%p
 							= cat[:description]
 
-						%a.button-1{ :href => "/category/#{cat[:id]}"}
+						%a.button-1{ :href => "#{categories_path}/#{cat[:id]}" }
 							Explore &rsaquo;
 
 					.category-content.omega

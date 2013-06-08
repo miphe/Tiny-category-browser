@@ -1,0 +1,67 @@
+/* -------------------------------------------------------------------------*/
+/* Lists */
+
+// TODO: add list layout styles.
+.l-list {
+	li {
+
+	}
+}
+
+$list-1-color: #cecece;
+.list-1 {
+	@extend .l-list;
+
+	li {
+		padding-left: 10px;
+		border: {
+			top: 1px solid $list-1-color;
+			right: 1px solid $list-1-color;
+			bottom: 1px solid $list-1-color;
+			left: 5px solid $list-1-color;
+		}
+		margin-bottom: 10px;
+	}
+}
+
+$list-1-padding: 6px;
+$list-1-icon-height: 80px;
+.list-1-icons {
+	@extend .list-1;
+
+	li {
+		padding-left: 0;
+
+		&.collapsed {
+			height: $list-1-icon-height;
+		}
+	}
+
+	.l-portrait-item {
+		padding: $list-1-padding 0 0 0;
+	}
+
+	.l-portrait-item, .icon {
+		float: left;
+	}
+
+	.icon {
+		height: $list-1-icon-height;
+		width: $list-1-icon-height;
+		margin-right: $list-1-padding;
+	}
+
+	.box-theme-1 {
+		margin-bottom: 0;
+	}
+}
+
+.list-simple {
+	li {
+		border: none;
+		list-style: {
+			position: inside;
+			type: disc;
+		}
+	}
+}
