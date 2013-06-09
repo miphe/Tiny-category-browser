@@ -1,0 +1,4 @@
+- button "/", "&lsaquo; Go back"
+
+- gs.each do |g|
+	= render :template => 'goals/goal', :locals => { :g => g, :single => single }

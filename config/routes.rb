@@ -1,22 +1,13 @@
 Cer::Application.routes.draw do
   root 'main#index'
 
-  # map.resources :categories
-
-  # get 'categories/:id' => 'categories#index'
-
-  resources :categories do
-    resources :series do
-      resources :goals
+  resources :categories, :only => [:show, :index] do
+    resources :series, :only => [:show, :index] do
+      resources :goals, :only => [:show, :index]
     end
   end
 
-  #get 'category' => 'category#index'
-  #get 'category/:id' => 'category#index'
-#
-  #get 'category/:id/series' => 'series#index'
-  #get 'category/:id/series/:id' => 'series#index'
-#
-  #get 'category/:id/series/:id/goal' => 'goal#index'
-  #get 'category/:id/series/:id/goal/:id' => 'goal#index'
+  resources :items, :only => [:show]
+  match 'goals/tags/:id' => 'goals#tags', :via => :get
+
 end

@@ -13,8 +13,7 @@
 						%p
 							= cat[:description]
 
-						%a.button-1{ :href => "#{categories_path}/#{cat[:id]}" }
-							Explore &rsaquo;
+						- button "#{categories_path}/#{cat[:id]}", 'Explore &rsaquo;'
 
 					.category-content.omega
 						%img{ :src => image_path(cat[:icon_image]) }/

@@ -1,0 +1,33 @@
+- if single
+	- button "#{categories_path}/#{params[:category_id]}", "&lsaquo; Go back"
+
+.box-theme-1
+
+	.box-theme-2
+
+		%h2
+			= g[:title]
+			%span.subtle-text
+				= "Taken by #{g[:users_count]} students."
+
+		%p
+			= g[:description]
+
+		%ul.list-tags
+			- g[:tags].each do |tag|
+				%li
+					%a.button-1-inline{ :href => "/goals/tags/#{tag}" }
+						= tag
+
+	.box-theme-2
+		%ul.list-simple
+			%li
+				= "Author: " + g[:author][:name]
+			%li
+				= "Amount of items: " + g[:items_count].to_s
+			%li
+				= "Amount of sentences: " + g[:sentence_count].to_s
+
+	.box-theme-2
+		%p
+			TODO #=> render items

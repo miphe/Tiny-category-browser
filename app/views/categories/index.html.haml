@@ -1,5 +1,4 @@
-%a.button-1{ :href => '/'}<
-	&lsaquo; Go back
+- button "/", "&lsaquo; Go back"
 
 .box-theme-1
 	.category-container-main.c
@@ -26,9 +25,8 @@
 
 							.l-portrait-item
 								%h3
-									%a.button-1.ce-trigger{ :href => '#'}
-										= serie[:name]
-										&rsaquo;
+									- button "#", "#{serie[:name]} &rsaquo;", 'ce-trigger'
+
 								%p
 									= serie[:description]
 
@@ -45,8 +43,3 @@
 
 		.category-content.omega
 			%img{ :src => image_path(@category[:main_image]), :alt => @category[:name] }/
-
-%hr
-
-%pre
-	= @category[:series][0][:goals]
