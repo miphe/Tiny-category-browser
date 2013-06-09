@@ -31,7 +31,7 @@ $box-theme-1-color: #ececec;
 .box-theme-2 {
 	@extend .l-box;
 
-	border: 1px solid darken($box-theme-1-color, 2%);
+	border: 1px solid darken($box-theme-1-color, 9%);
 }
 
 $box-theme-3-color: rgb(0, 171, 76);

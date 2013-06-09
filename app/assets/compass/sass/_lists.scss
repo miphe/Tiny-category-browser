@@ -8,6 +8,14 @@
 	}
 }
 
+.l-list-inline {
+	@extend .c;
+
+	li {
+		float: left;
+	}
+}
+
 $list-1-color: #cecece;
 .list-1 {
 	@extend .l-list;
@@ -63,5 +71,13 @@ $list-1-icon-height: 80px;
 			position: inside;
 			type: disc;
 		}
+	}
+}
+
+.list-tags {
+	@extend .l-list-inline;
+
+	li {
+		margin-right: 5px;
 	}
 }

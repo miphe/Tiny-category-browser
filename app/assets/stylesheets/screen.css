@@ -2,7 +2,7 @@
 /* Author André Drougge */
 /* -------------------------------------------------------------------------*/
 /* Clearfix */
-.c {
+.c, .l-list-inline, .list-tags {
   overflow: hidden;
   *zoom: 1;
 }
@@ -213,7 +213,7 @@ p {
 }
 
 .box-theme-2 {
-  border: 1px solid #e7e7e7;
+  border: 1px solid #d5d5d5;
 }
 
 .box-theme-3 {
@@ -256,6 +256,10 @@ p {
 
 /* -------------------------------------------------------------------------*/
 /* Lists */
+.l-list-inline li, .list-tags li {
+  float: left;
+}
+
 .list-1 li, .list-1-icons li {
   padding-left: 10px;
   border-top: 1px solid #cecece;
@@ -290,6 +294,10 @@ p {
   border: none;
   list-style-position: inside;
   list-style-type: disc;
+}
+
+.list-tags li {
+  margin-right: 5px;
 }
 
 /* -------------------------------------------------------------------------*/
