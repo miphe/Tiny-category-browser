@@ -4,17 +4,11 @@
 
 Rails platform with Sass, Haml jQuery and CoffeeScript. This site will work as a browser for categories.
 
-## Issues
+## Setup
 
-### Rails
-
-- Routes, mapping per controller very different from Ramaze
-
-### CoffeeScript
-
-- Issue with not initializing script unless manual reload
-
-## Notes
-
-- Learned a lot about routing in Rails
-- First CoffeScript :)
+```
+$ git clone {repository_src} {project_dir}
+$ cd {project_dir}
+$ bundle install
+$ rails server
+```
